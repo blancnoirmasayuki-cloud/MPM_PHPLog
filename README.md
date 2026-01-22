@@ -16,7 +16,7 @@
 - ⑧ログイン機能をJavascriptからPHPへ変更 ⭐️新規追加
 
 ## ③アプリのデプロイURL
-https://masa-programming.sakura.ne.jp/marketing-prompt-maker-API-PHP-2/
+https://masa-programming.sakura.ne.jp/marke-login/php/login.php
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 - ユニークID：42rk2GbmrxRGWzLGGXXmUEHGWOO2　（ダミーで事前にMySQLで作ったデータです）
