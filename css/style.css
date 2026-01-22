@@ -1,6 +1,11 @@
-body{
-    background-color:#F0F4F9;
+/* --- 全体・メイン画面用の設定 --- */
+body {
+    background-color: #F0F4F9;
     font-family: Arial, Helvetica, sans-serif;
+    /* flex設定を削除し、通常の縦並びにします */
+    display: block; 
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -16,7 +21,7 @@ h1 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
 }
 
-.marketingimg{
+.marketingimg {
     width: 450px;
     height: 400px;
     margin: 0 auto;
@@ -24,25 +29,26 @@ h1 {
 }
 
 #input-area {
-    margin: 20px auto ;
+    margin: 20px auto;
     padding: 15px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* 画面が狭い時に折り返す設定 */
 }
 
-.service,.brand,.target{
+.service, .brand, .target {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
     padding: 25px;
+    min-width: 380px; /* 横幅を安定させる */
 }
 
-.brand{
+.brand {
     margin: 0 20px;
 }
 
-
-.about-service,.about-brand,.about-target{
+.about-service, .about-brand, .about-target {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
@@ -61,66 +67,52 @@ input {
 
 .button-area {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
 }
 
 .button-area button {
-    border: 1px solid ;
+    border: 1px solid #555;
     border-radius: 5px;
-    border-color: #555;
-    width: 25%;
+    width: 19%; /* 5つ並ぶので少し狭める */
     height: 60px;
     text-align: center;
-    font-size: 20px;
-    margin: 0 10px;
+    font-size: 16px;
+    margin: 0 5px;
     background-color: #F0F4F9;
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .button-area button:hover {
-  background-color: cornflowerblue;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-color: cornflowerblue;
-  color: white;
-}
-
-#list {
-    width: 90%;
-    margin: 50px auto;
-}
-
-#list li {
-    font-size: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 20px
+    background-color: cornflowerblue;
+    color: white;
+    border-color: cornflowerblue;
 }
 
 #makeprompt {
-   background-color: orange;
-   color:white;
-   border-color:white ;
+   background-color: orange !important;
+   color: white !important;
+   border-color: white !important;
 }
 
-.prompt-area{
+.prompt-area {
     width: 50%;
-    margin: 30px auto ;
+    margin: 30px auto;
     padding: 15px;
-    border: 1px solid;
+    border: 2px solid #555;
     border-radius: 20px;
-    border: solid #555;
     background-color: white;
 }
 
-/* ログイン画面 */
-body {
+/* --- ログイン画面専用（ここを body ではなく .login-body に変更） --- */
+.login-body {
     display: flex; 
     align-items: center; 
     justify-content: center; 
     min-height: 100vh; 
+    background-color: #F0F4F9;
 }
 
 #auth-container {
@@ -132,19 +124,9 @@ body {
     text-align: center;
 }
 
-/* 入力欄とボタン */
-#auth-container input[type="email"],
-#auth-container input[type="password"] {
+#auth-container input {
     width: 100%;
-    box-sizing: border-box; 
-    margin-bottom: 15px;
+    height: auto;
     padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#auth-container button {
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
+    box-sizing: border-box;
 }

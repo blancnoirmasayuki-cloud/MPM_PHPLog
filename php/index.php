@@ -1,3 +1,14 @@
+<?php
+session_start();
+// セッションIDがない人は強制的にログイン画面へ
+if (!isset($_SESSION['chk_ssid']) || $_SESSION['chk_ssid'] != session_id()) {
+    header('Location: login.php');
+    exit();
+}
+// ログイン中のIDを変数に入れておく
+$login_uid = $_SESSION['uid'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +18,7 @@
 </head>
 
 <body>
-    <div id="auth-container">
+    <!-- <div id="auth-container">
         <div>ユーザー登録 / ログイン</div>
         <input type="email" id="email" placeholder="メールアドレス" required><br>
         <input type="password" id="password" placeholder="パスワード" required><br><br>
@@ -17,7 +28,7 @@
         <p id="auth-error-message" style="color: red; margin-top: 10px;"></p>
     </div>
 
-    <div id="app-content" style="display: none;">
+    <div id="app-content" style="display: none;"> -->
         
         <h1 id="app-title">マーケティングプロンプトメーカー📢</h1> <img src="../img/Gemini_Generated_Image_xrbtegxrbtegxrbt.png" class="marketingimg">
         
